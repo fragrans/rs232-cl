@@ -1,9 +1,10 @@
 #include "./rs232.h"
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include <stddef.h>
 
-/* 
+/*
 open rs232
 */
 void* rs232_open(const char* com)
@@ -25,8 +26,11 @@ int rs232_send(const void* com, const char* cc, int size)
 
 int rs232_recv(const void* com, char* cc, int size)
 {
-    printf("read:");
-    return fread(cc, 1, size, (FILE*)com);
+    /*
+      printf("read:");
+      return fread(cc, 1, size, (FILE*)com);
+      char cc[100] = {0};
+    */
+    sprintf(cc, "wtf");
+    return strlen(cc);
 }
-
-
